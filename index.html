@@ -7,7 +7,7 @@
 <style>
 :root {
   --white: #ffffff;
-  --bg: #f5f5f7;
+  --bg: #f0f0f3;
   --dark: #1d1d1f;
   --muted: #86868b;
   --muted2: #6e6e73;
@@ -39,41 +39,40 @@ a:hover { color: var(--accent); }
 /* ========== NAV ========== */
 .top-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(255,255,255,0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  height: 48px;
-  display: flex; align-items: center;
-  padding: 0 24px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(200%) blur(30px);
+  -webkit-backdrop-filter: saturate(200%) blur(30px);
+  border-bottom: 1.5px solid rgba(0,0,0,0.13);
+  padding: 10px 16px 10px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
 }
 .top-nav .brand {
-  font-weight: 700; font-size: 14px;
+  font-weight: 700; font-size: 15px;
   color: var(--dark);
+  letter-spacing: -0.01em;
   margin-right: auto;
   white-space: nowrap;
-  letter-spacing: -0.01em;
 }
 .nav-scroll {
-  display: flex; gap: 4px;
-  overflow-x: auto; white-space: nowrap;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 4px;
+  display: flex; flex-wrap: wrap; gap: 5px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 2px;
 }
-.nav-scroll::-webkit-scrollbar { display: none; }
 .nav-scroll a {
   font-size: 12px; color: var(--muted2);
-  padding: 5px 12px; border-radius: 20px;
-  background: transparent;
+  padding: 6px 13px; border-radius: 20px;
+  background: rgba(0,0,0,0.05);
   transition: all 0.2s;
   flex-shrink: 0;
+  font-weight: 500;
 }
-.nav-scroll a:hover { background: var(--bg); color: var(--dark); text-decoration: none; }
+.nav-scroll a:hover { background: rgba(200,80,64,0.12); color: var(--accent); text-decoration: none; }
+.nav-scroll a:active { background: rgba(200,80,64,0.18); }
 
 /* ========== HERO ========== */
 .hero {
-  margin-top: 48px;
+  margin-top: 105px;
   background: linear-gradient(180deg, #1d1d1f 0%, #2d2d30 100%);
   color: #f5f5f7;
   padding: 80px 24px 72px;
@@ -169,14 +168,15 @@ a:hover { color: var(--accent); }
   background: var(--white);
   border-radius: var(--radius);
   padding: 32px 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .scroll-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 12px 40px rgba(0,0,0,0.08);
 }
 .scroll-card .card-icon {
   width: 48px; height: 48px;
@@ -315,7 +315,8 @@ a:hover { color: var(--accent); }
   background: var(--white);
   border-radius: var(--radius);
   padding: 28px 24px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 .pkg-card h4 {
   font-size: 1.05rem; font-weight: 700;
@@ -460,7 +461,8 @@ a:hover { color: var(--accent); }
   margin: 24px 0;
   scrollbar-width: none;
   border-radius: var(--radius-sm);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 .data-wrap::-webkit-scrollbar { display: none; }
 .data-table {
@@ -526,7 +528,8 @@ a:hover { color: var(--accent); }
   padding: 20px;
   background: var(--white);
   border-radius: var(--radius-sm);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
   transition: transform 0.2s;
 }
 .food-item:hover { transform: translateY(-2px); }
@@ -565,7 +568,8 @@ a:hover { color: var(--accent); }
   padding: 24px 16px;
   background: var(--white);
   border-radius: var(--radius-sm);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 .weather-card .city { font-weight: 600; font-size: 14px; color: var(--dark); }
 .weather-card .temp {
@@ -757,8 +761,10 @@ a:hover { color: var(--accent); }
   .compare-table { font-size: 11px; }
   .compare-table th, .compare-table td { padding: 8px 6px; }
   .photo-grid { grid-template-columns: 1fr; }
-  .top-nav { padding: 0 12px; }
-  .nav-scroll a { font-size: 11px; padding: 4px 8px; }
+  .top-nav { padding: 8px 12px 8px; gap: 6px; }
+  .top-nav .brand { font-size: 14px; }
+  .nav-scroll { gap: 4px; }
+  .nav-scroll a { font-size: 11px; padding: 5px 10px; }
 }
 
 /* ========== PRINT ========== */
