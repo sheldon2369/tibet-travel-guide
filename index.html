@@ -155,14 +155,14 @@ a:hover { color: var(--accent); }
 .scroll-container {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  gap: 16px;
-  padding: 0 24px 20px;
+  padding: 16px 7.5vw 24px;
   scrollbar-width: none;
   margin: 0 -24px;
   touch-action: pan-x pan-y;
+  scroll-padding: 0 7.5vw;
 }
 .scroll-container::-webkit-scrollbar { display: none; }
 /* Dot indicators */
@@ -181,22 +181,22 @@ a:hover { color: var(--accent); }
   width: 24px; border-radius: 4px;
 }
 .scroll-card {
-  flex: 0 0 85vw;
+  flex: 0 0 82vw;
   max-width: 360px;
   scroll-snap-align: center;
   background: var(--white);
   border-radius: var(--radius);
   padding: 32px 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1), 0 12px 40px rgba(0,0,0,0.06);
   border: 1px solid rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.35s cubic-bezier(0.25,0.1,0.25,1), opacity 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform, opacity;
+  position: relative;
+  margin-left: -20px;
 }
-.scroll-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 12px 40px rgba(0,0,0,0.08);
-}
+.scroll-card:first-child { margin-left: 0; }
 .scroll-card .card-icon {
   width: 48px; height: 48px;
   border-radius: var(--radius-sm);
@@ -320,26 +320,31 @@ a:hover { color: var(--accent); }
 .pkg-scroll {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  gap: 16px;
-  padding: 0 24px 20px;
+  padding: 16px 6vw 24px;
   scrollbar-width: none;
   margin: 0 -24px;
   touch-action: pan-x pan-y;
+  scroll-padding: 0 6vw;
 }
 .pkg-scroll::-webkit-scrollbar { display: none; }
 .pkg-card {
-  flex: 0 0 88vw;
+  flex: 0 0 84vw;
   max-width: 400px;
   scroll-snap-align: center;
   background: var(--white);
   border-radius: var(--radius);
   padding: 28px 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1), 0 8px 32px rgba(0,0,0,0.05);
   border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.35s cubic-bezier(0.25,0.1,0.25,1), opacity 0.35s ease;
+  will-change: transform, opacity;
+  position: relative;
+  margin-left: -20px;
 }
+.pkg-card:first-child { margin-left: 0; }
 .pkg-card h4 {
   font-size: 1.05rem; font-weight: 700;
   letter-spacing: -0.01em;
@@ -753,14 +758,14 @@ a:hover { color: var(--accent); }
     margin: 0;
     padding: 0;
   }
-  .scroll-card { flex: 0 0 calc(33.33% - 14px); max-width: 340px; }
-  .pkg-card { flex: 0 0 calc(50% - 10px); max-width: 420px; }
+  .scroll-card { flex: 0 0 calc(33.33% - 14px); max-width: 340px; margin-left: 0; }
+  .pkg-card { flex: 0 0 calc(50% - 10px); max-width: 420px; margin-left: 0; }
   .tips-grid { grid-template-columns: 1fr 1fr; }
   .photo-grid { grid-template-columns: repeat(4, 1fr); }
 }
 @media (min-width: 1024px) {
-  .scroll-card { flex: 0 0 calc(20% - 16px); min-width: 200px; max-width: 220px; }
-  .pkg-card { flex: 0 0 calc(33.33% - 14px); max-width: 380px; }
+  .scroll-card { flex: 0 0 calc(20% - 16px); min-width: 200px; max-width: 220px; margin-left: 0; }
+  .pkg-card { flex: 0 0 calc(33.33% - 14px); max-width: 380px; margin-left: 0; }
 }
 
 /* ========== MOBILE ========== */
@@ -795,6 +800,7 @@ a:hover { color: var(--accent); }
   .top-nav { position: static; }
   .hero { background: var(--dark); }
   .scroll-container, .pkg-scroll { flex-wrap: wrap; overflow-x: visible; }
+  .scroll-card, .pkg-card { margin-left: 0; transform: none !important; opacity: 1 !important; }
   .section { break-inside: avoid; }
   .day-block { break-inside: avoid; }
 }
@@ -1920,7 +1926,7 @@ a:hover { color: var(--accent); }
 
 </main>
 
-<!-- Dot Indicators Script -->
+<!-- Dot Indicators + Stacking Effect Script -->
 <script>
 (function() {
   function initScrollDots(container, cardSelector) {
@@ -1945,24 +1951,44 @@ a:hover { color: var(--accent); }
     }
     container.parentNode.insertBefore(dotsDiv, container.nextSibling);
     
-    // Update dots on scroll
     var dots = dotsDiv.querySelectorAll('.dot');
-    var scrollTimer;
+    
+    function updateEffect() {
+      var containerRect = container.getBoundingClientRect();
+      var viewCenter = containerRect.left + containerRect.width / 2;
+      var closest = 0, minDist = Infinity;
+      
+      for (var i = 0; i < cards.length; i++) {
+        var cardRect = cards[i].getBoundingClientRect();
+        var cardCenter = cardRect.left + cardRect.width / 2;
+        var dist = Math.abs(viewCenter - cardCenter);
+        var maxDist = containerRect.width / 2 + cardRect.width / 2;
+        var ratio = Math.min(dist / maxDist, 1);
+        
+        // Stacking depth effect
+        var scale = 1 - ratio * 0.08;
+        var opacity = 1 - ratio * 0.35;
+        var zOffset = Math.round((1 - ratio) * 10);
+        
+        cards[i].style.transform = 'scale(' + scale.toFixed(3) + ')';
+        cards[i].style.opacity = opacity.toFixed(3);
+        cards[i].style.zIndex = zOffset;
+        
+        if (dist < minDist) { minDist = dist; closest = i; }
+      }
+      
+      // Update dots
+      for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.toggle('active', j === closest);
+      }
+    }
+    
     container.addEventListener('scroll', function() {
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function() {
-        var center = container.scrollLeft + container.clientWidth / 2;
-        var closest = 0, minDist = Infinity;
-        for (var i = 0; i < cards.length; i++) {
-          var cardCenter = cards[i].offsetLeft - container.offsetLeft + cards[i].offsetWidth / 2;
-          var dist = Math.abs(center - cardCenter);
-          if (dist < minDist) { minDist = dist; closest = i; }
-        }
-        for (var j = 0; j < dots.length; j++) {
-          dots[j].classList.toggle('active', j === closest);
-        }
-      }, 50);
+      requestAnimationFrame(updateEffect);
     }, { passive: true });
+    
+    // Initial update
+    updateEffect();
   }
   
   document.querySelectorAll('.scroll-container').forEach(function(el) {
