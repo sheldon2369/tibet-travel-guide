@@ -472,6 +472,27 @@ table.data-table tr:hover td { background: rgba(250,246,240,0.5); }
   .plan-grid { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
   .food-list { grid-template-columns: 1fr; }
+  /* 找司机板块移动端优化 */
+  #find-driver { padding: var(--spacing-md) !important; }
+  #find-driver > div { padding: var(--spacing-md) !important; }
+  #find-driver h3 { font-size: 1.15rem !important; }
+  #find-driver h4 { font-size: 0.95rem !important; line-height: 1.4 !important; }
+  #find-driver p { font-size: 0.85rem !important; }
+  #find-driver a[style*="display:inline-block"] {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 0.8rem !important;
+    padding: 8px 10px !important;
+    word-break: break-all;
+  }
+  #find-driver .price-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #find-driver .price-table-wrap table { min-width: 480px; }
+  #find-driver .tips-grid { grid-template-columns: 1fr !important; }
+  #find-driver .tips-grid p:first-child { font-size: 0.85rem !important; }
+  #find-driver .tips-grid p:last-child { font-size: 0.82rem !important; }
+  .top-nav { gap: 4px; padding: var(--spacing-xs) var(--spacing-sm); }
+  .top-nav a { font-size: 0.75rem; padding: 3px 7px; }
 }
 </style>
 </head>
@@ -771,7 +792,7 @@ table.data-table tr:hover td { background: rgba(250,246,240,0.5); }
       </div>
 
       <!-- 包车价格参考 -->
-      <div style="background:#f9f5ed;border-radius:var(--radius-md);padding:var(--spacing-lg);margin-bottom:var(--spacing-lg);border:1px dashed var(--color-rule);">
+      <div class="price-table-wrap" style="background:#f9f5ed;border-radius:var(--radius-md);padding:var(--spacing-lg);margin-bottom:var(--spacing-lg);border:1px dashed var(--color-rule);">
         <h4 style="font-size:1rem;font-weight:700;color:var(--color-gold);margin-bottom:var(--spacing-sm);">💰 2026年西藏包车价格参考（含司机）</h4>
         <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
           <thead>
@@ -818,7 +839,7 @@ table.data-table tr:hover td { background: rgba(250,246,240,0.5); }
       <!-- 避坑指南 -->
       <div style="background:#fff5f5;border-radius:var(--radius-md);padding:var(--spacing-lg);border:1px solid #f0c0c0;">
         <h4 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:var(--spacing-md);">⚠️ 找司机避坑指南（必看）</h4>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--spacing-md);">
+        <div class="tips-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--spacing-md);">
           <div>
             <p style="font-size:0.88rem;font-weight:700;color:var(--color-ink);margin-bottom:4px;">✅ 核实资质</p>
             <p style="font-size:0.85rem;color:var(--color-muted);">确认车辆有营运牌照（藏L开头），司机有道路运输从业资格证。要求出示证件编号，可在文旅部官网核验。</p>
