@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Disposition" content="inline">
+<title>西藏中秋旅行攻略 · 深圳出发7日 · 4人方案</title>
+<style>
+:root {
+  --color-canvas: #faf6f0;
+  --color-surface: #f2ebe0;
+  --color-surface-2: #e8dfd2;
+  --color-ink: #2a1f14;
+  --color-muted: #6b5d4f;
+  --color-rule: #d4c8b8;
+  --color-accent: #a03020;
+  --color-accent-light: #c85040;
+  --color-blue: #2a6496;
+  --color-gold: #b8860b;
+  --color-green: #2d7d46;
+  --color-tag-bg: #f0e6d6;
+  --font-display: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-body: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 3.5rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--color-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* ---- NAV ---- */
+.top-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,246,240,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-rule);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  display: flex; flex-wrap: wrap; gap: var(--spacing-sm);
+  align-items: center;
+}
+.top-nav .brand {
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--color-accent);
+  margin-right: auto;
+  white-space: nowrap;
+}
+.top-nav a {
+  font-size: 0.82rem; color: var(--color-muted);
+  padding: 4px 10px; border-radius: var(--radius-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.top-nav a:hover { background: var(--color-surface); color: var(--color-ink); text-decoration: none; }
+
+/* ---- HERO ---- */
+.hero {
+  background: linear-gradient(135deg, #2a1f14 0%, #4a2820 40%, #6b3a28 100%);
+  color: #faf6f0;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(184,134,11,0.15) 0%, transparent 60%);
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  position: relative;
+}
+.hero .subtitle {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: rgba(250,246,240,0.75);
+  margin-top: var(--spacing-sm);
+  position: relative;
+}
+.hero .meta-row {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  position: relative;
+}
+.hero .meta-tag {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  color: rgba(250,246,240,0.9);
+}
+
+/* ---- LAYOUT ---- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ---- SECTION ---- */
+.section {
+  padding: var(--spacing-xxl) 0;
+}
+.section + .section {
+  border-top: 1px solid var(--color-rule);
+}
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+.section-title {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-ink);
+}
+
+/* ---- CARDS ---- */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+.plan-card {
+  background: #fff;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.plan-card:hover { box-shadow: 0 4px 20px rgba(42,31,20,0.08); }
+.plan-card .plan-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-md);
+}
+.plan-card h3 {
+  font-size: 1.15rem; font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+.plan-card .plan-desc {
+  font-size: 0.9rem; color: var(--color-muted);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+.plan-card .plan-detail {
+  font-size: 0.85rem; line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+.plan-card .plan-detail li {
+  margin-bottom: 4px;
+  list-style: none;
+  padding-left: 1.2em;
+  position: relative;
+}
+.plan-card .plan-detail li::before {
+  content: '·';
+  position: absolute; left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.plan-card .price-tag {
+  margin-top: auto;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-tag-bg);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+.plan-card .price-tag strong {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+.plan-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: var(--spacing-sm);
+}
+.badge-recommend { background: var(--color-accent); color: #fff; }
+.badge-scenic { background: var(--color-blue); color: #fff; }
+.badge-adventure { background: var(--color-gold); color: #fff; }
+.badge-economy { background: var(--color-green); color: #fff; }
+
+/* ---- ITINERARY ---- */
+.itinerary {
+  display: flex; flex-direction: column; gap: 0;
+}
+.day-block {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.day-block:last-child { border-bottom: none; }
+.day-num {
+  text-align: center;
+  padding-top: 2px;
+}
+.day-num .num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.day-num .label {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.day-content h4 {
+  font-size: 1.05rem; font-weight: 700;
+  margin-bottom: 6px;
+}
+.day-content .route-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--color-tag-bg);
+  color: var(--color-muted);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.day-content p {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin-top: 6px;
+  line-height: 1.7;
+}
+.day-content .tip-box {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #fef9f0;
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}
+.day-content .altitude {
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ---- TABLE ---- */
+.data-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--spacing-md) 0;
+}
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+table.data-table th {
+  background: var(--color-surface);
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--color-rule);
+  white-space: nowrap;
+}
+table.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+}
+table.data-table tr:hover td { background: rgba(250,246,240,0.5); }
+
+/* ---- INFO GRID ---- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+}
+.info-block h4 {
+  font-size: 0.95rem; font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  display: flex; align-items: center; gap: 8px;
+}
+.info-block ul {
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+.info-block ul li {
+  padding: 4px 0;
+  padding-left: 1.2em;
+  position: relative;
+}
+.info-block ul li::before {
+  content: '›';
+  position: absolute; left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ---- FOOD SECTION ---- */
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+.food-item {
+  display: flex; gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: #fff;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+}
+.food-item .food-emoji {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-tag-bg);
+  border-radius: var(--radius-md);
+}
+.food-item .food-info h5 {
+  font-size: 0.95rem; font-weight: 700;
+  margin-bottom: 2px;
+}
+.food-item .food-info p {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+.food-item .food-price {
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ---- WEATHER ---- */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--spacing-md);
+}
+.weather-card {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: #fff;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+}
+.weather-card .city { font-weight: 700; font-size: 0.95rem; }
+.weather-card .temp {
+  font-size: 1.4rem; font-weight: 800;
+  color: var(--color-accent);
+  margin: 6px 0;
+}
+.weather-card .desc { font-size: 0.78rem; color: var(--color-muted); }
+
+/* ---- SOURCE BOX ---- */
+.source-box {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+.source-box a { color: var(--color-blue); }
+
+/* ---- CHECKLIST ---- */
+.checklist {
+  columns: 2;
+  column-gap: var(--spacing-xl);
+  list-style: none;
+  font-size: 0.9rem;
+}
+.checklist li {
+  padding: 4px 0 4px 1.6em;
+  position: relative;
+  break-inside: avoid;
+}
+.checklist li::before {
+  content: '☐';
+  position: absolute; left: 0;
+  color: var(--color-accent);
+}
+
+/* ---- COMPARISON ---- */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: var(--spacing-md) 0;
+}
+.compare-table th {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+}
+.compare-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-rule);
+  text-align: center;
+}
+.compare-table tr:nth-child(even) td { background: rgba(250,246,240,0.5); }
+.compare-table .highlight { font-weight: 700; color: var(--color-accent); }
+
+/* ---- FOOTER ---- */
+.page-footer {
+  background: var(--color-ink);
+  color: rgba(250,246,240,0.6);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+.page-footer a { color: rgba(250,246,240,0.8); }
+
+/* ---- PRINT ---- */
+@media print {
+  .top-nav { position: static; }
+  .hero { background: var(--color-ink); }
+  .plan-card:hover { box-shadow: none; }
+  .section { break-inside: avoid; }
+  .day-block { break-inside: avoid; }
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 640px) {
+  .day-block {
+    grid-template-columns: 60px 1fr;
+    gap: var(--spacing-sm);
+  }
+  .day-num .num { font-size: 1.4rem; }
+  .checklist { columns: 1; }
+  .hero { padding: var(--spacing-xl) var(--spacing-md); }
+  .container { padding: 0 var(--spacing-md); }
+  .plan-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+  .food-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav" role="navigation" aria-label="页面导航">
+  <span class="brand">🏔️ 西藏攻略</span>
+  <a href="#plans">方案对比</a>
+  <a href="#itinerary">7日行程</a>
+  <a href="#transport">交通</a>
+  <a href="#budget">预算</a>
+  <a href="#food">美食</a>
+  <a href="#weather">天气</a>
+  <a href="#prepare">行前准备</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>西藏中秋旅行攻略</h1>
+  <p class="subtitle">深圳出发 · 4人同行 · 7天深度游</p>
+  <div class="meta-row">
+    <span class="meta-tag">📅 2026年9月26日 – 10月2日</span>
+    <span class="meta-tag">👥 4人小团</span>
+    <span class="meta-tag">🏔️ 拉萨·林芝·羊湖·纳木错</span>
+    <span class="meta-tag">🌡️ 9月底黄金观景期</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ===== SECTION: 方案对比 ===== -->
+  <section class="section" id="plans">
+    <div class="section-label">PLAN COMPARISON</div>
+    <h2 class="section-title">四种旅行方案对比</h2>
+    <p style="color:var(--color-muted);margin-bottom:var(--spacing-lg);font-size:0.92rem;">
+      根据你们的出行人数（4人）和时间（7天），整理了以下四种方案。9月底属于西藏旅游黄金期尾声，天气稳定、空气通透，是观赏雪山和圣湖的最佳季节。
+    </p>
+
+    <div class="plan-grid">
+      <!-- 方案A -->
+      <div class="plan-card">
+        <div class="plan-icon" style="background:#fde8e0;">✈️</div>
+        <span class="plan-badge badge-recommend">⭐ 推荐首选</span>
+        <h3>方案A：小包团 · 落地跟团</h3>
+        <p class="plan-desc">深圳飞拉萨，当地参加4-6人精品小团，含车含导游，纯玩无购物。</p>
+        <ul class="plan-detail">
+          <li>深圳直飞拉萨（约5.5h），提前适应海拔</li>
+          <li>当地4人独立成团，配专属司机+导游</li>
+          <li>路线：拉萨→林芝→羊湖→纳木错经典环线</li>
+          <li>全程商务车/越野车，住宿含供氧酒店</li>
+          <li>最省心，适合首次进藏</li>
+        </ul>
+        <div class="price-tag">
+          4人总预算：<strong>2.0 – 3.0万元</strong>（人均5000-7500元）<br>
+          <span style="font-size:0.78rem;color:var(--color-muted);">含机票、住宿、包车、导游、门票</span>
+        </div>
+      </div>
+
+      <!-- 方案B -->
+      <div class="plan-card">
+        <div class="plan-icon" style="background:#e0f0e8;">🚗</div>
+        <span class="plan-badge badge-scenic">🔥 最自由</span>
+        <h3>方案B：包车自由行</h3>
+        <p class="plan-desc">深圳飞拉萨，当地包7座商务车+老司机，行程完全自定义。</p>
+        <ul class="plan-detail">
+          <li>4人包一辆7座商务车，空间充裕</li>
+          <li>老司机兼向导，熟悉各条线路和小众景点</li>
+          <li>随走随停，拍照自由度高</li>
+          <li>住宿餐饮自行决定，灵活性强</li>
+          <li>适合有一定旅行经验的团队</li>
+        </ul>
+        <div class="price-tag">
+          4人总预算：<strong>1.8 – 2.8万元</strong>（人均4500-7000元）<br>
+          <span style="font-size:0.78rem;color:var(--color-muted);">含机票、包车费、住宿、门票（不含餐饮）</span>
+        </div>
+      </div>
+
+      <!-- 方案C -->
+      <div class="plan-card">
+        <div class="plan-icon" style="background:#e0e8f5;">🏕️</div>
+        <span class="plan-badge badge-adventure">⛰️ 深度体验</span>
+        <h3>方案C：川藏线自驾（成都出发）</h3>
+        <p class="plan-desc">深圳飞成都，租车走川藏线318国道进藏，一路风景震撼。</p>
+        <ul class="plan-detail">
+          <li>深圳飞成都（约2.5h），成都租越野车</li>
+          <li>沿318国道经康定、理塘、林芝进拉萨</li>
+          <li>全程约2200km，沿途雪山、峡谷、冰川</li>
+          <li>需7-10天（本方案仅展示西藏段精华）</li>
+          <li>⚠️ 需驾驶经验丰富，高原路况复杂</li>
+        </ul>
+        <div class="price-tag">
+          4人总预算：<strong>2.5 – 3.5万元</strong>（人均6250-8750元）<br>
+          <span style="font-size:0.78rem;color:var(--color-muted);">含机票、租车+异地还车、油费、住宿、门票</span>
+        </div>
+      </div>
+
+      <!-- 方案D -->
+      <div class="plan-card">
+        <div class="plan-icon" style="background:#f5f0e0;">🎒</div>
+        <span class="plan-badge badge-economy">💰 最省钱</span>
+        <h3>方案D：经济拼团 · 火车进藏</h3>
+        <p class="plan-desc">深圳飞成都/重庆转火车进藏，当地拼车拼团，极致性价比。</p>
+        <ul class="plan-detail">
+          <li>深圳飞成都，换乘青藏铁路火车进藏</li>
+          <li>火车约36h，沿途海拔循序渐进，高反最低</li>
+          <li>青藏铁路风光壮美，本身就是一段旅程</li>
+          <li>当地拼车/拼团，住青旅或经济酒店</li>
+          <li>适合预算有限的学生党或背包客</li>
+        </ul>
+        <div class="price-tag">
+          4人总预算：<strong>1.2 – 1.8万元</strong>（人均3000-4500元）<br>
+          <span style="font-size:0.78rem;color:var(--color-muted);">含交通、住宿、基本门票</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 方案对比表 -->
+    <div class="data-table-wrap" style="margin-top:var(--spacing-xl);">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>A 小包团</th>
+            <th>B 包车自由行</th>
+            <th>C 川藏线自驾</th>
+            <th>D 经济拼团</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>人均费用</td>
+            <td>5000-7500</td>
+            <td>4500-7000</td>
+            <td>6250-8750</td>
+            <td class="highlight">3000-4500</td>
+          </tr>
+          <tr>
+            <td>自由度</td>
+            <td>★★★</td>
+            <td class="highlight">★★★★★</td>
+            <td>★★★★★</td>
+            <td>★★</td>
+          </tr>
+          <tr>
+            <td>舒适度</td>
+            <td class="highlight">★★★★★</td>
+            <td>★★★★</td>
+            <td>★★★</td>
+            <td>★★</td>
+          </tr>
+          <tr>
+            <td>风景震撼度</td>
+            <td>★★★★</td>
+            <td>★★★★</td>
+            <td class="highlight">★★★★★</td>
+            <td>★★★</td>
+          </tr>
+          <tr>
+            <td>高反风险</td>
+            <td>低（供氧酒店）</td>
+            <td>低</td>
+            <td>中高（海拔攀升快）</td>
+            <td>最低（火车适应）</td>
+          </tr>
+          <tr>
+            <td>驾驶要求</td>
+            <td>无</td>
+            <td>无</td>
+            <td class="highlight">需老司机</td>
+            <td>无</td>
+          </tr>
+          <tr>
+            <td>适合人群</td>
+            <td>首次进藏首选</td>
+            <td>有旅行经验</td>
+            <td>自驾爱好者</td>
+            <td>预算敏感</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-box">
+      方案数据来源：
+      <a href="https://www.theninetrip.com/tibet-4-person-travel-cost-2026-guide/" target="_blank" rel="noopener noreferrer">趣旅行·4人西藏费用</a> ·
+      <a href="https://www.tibetway.com/tibet-travel-guide/travel-time.html" target="_blank" rel="noopener noreferrer">Tibet Vista·路线推荐</a> ·
+      <a href="https://m.cncn.com/lxs/88694/n1267610" target="_blank" rel="noopener noreferrer">欣欣旅游·7日花费复盘</a> ·
+      <a href="https://www.huarenyizhan.com/thread-27271-1-1.html" target="_blank" rel="noopener noreferrer">西藏包车价格表</a> ·
+      <a href="http://m.czxlvyou.com/bcgl/index_3.html" target="_blank" rel="noopener noreferrer">川藏线自驾旅游网</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 7日行程 ===== -->
+  <section class="section" id="itinerary">
+    <div class="section-label">7-DAY ITINERARY</div>
+    <h2 class="section-title">经典7日行程（方案A/B推荐）</h2>
+    <p style="color:var(--color-muted);margin-bottom:var(--spacing-lg);font-size:0.92rem;">
+      这条路线采用"东低西高"策略：先飞林芝（海拔2900m）适应，再逐步前往拉萨（3650m）和更高海拔地区，大幅降低高反风险。9月底正值秋季黄金期，天气稳定、空气通透。
+    </p>
+
+    <div class="itinerary">
+      <!-- Day 1 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">01</span>
+          <span class="label">9月26日</span>
+        </div>
+        <div class="day-content">
+          <h4>深圳 ✈ 林芝 <span class="altitude">海拔 2900m</span></h4>
+          <span class="route-tag">深圳宝安 → 林芝米林</span>
+          <span class="route-tag">适应高原</span>
+          <p>深圳直飞或经成都/重庆中转折达林芝米林机场。林芝被称为"西藏氧吧"，海拔仅2900m，植被茂密，是最佳的进藏第一站。抵达后入住八一镇酒店，全天休息适应高原，不做剧烈运动。</p>
+          <div class="tip-box">💡 第一天的核心任务只有一个：休息。多喝水、不洗澡、不饮酒。傍晚可在镇上散步，感受藏区氛围。</div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">02</span>
+          <span class="label">9月27日</span>
+        </div>
+        <div class="day-content">
+          <h4>林芝 · 巴松措 <span class="altitude">海拔 2900-3480m</span></h4>
+          <span class="route-tag">巴松措</span>
+          <span class="route-tag">新措轻徒步</span>
+          <span class="route-tag">中秋佳节</span>
+          <p>上午前往巴松措（门票120元），这是林芝最美的湖泊，碧绿湖水倒映雪山，湖心岛上有千年古寺。午后沿新措方向轻徒步，穿行原始森林与草甸，近距离感受"藏地江南"。今日恰逢中秋节，晚上可在湖边赏月🌕。</p>
+          <div class="tip-box">💡 巴松措观光车35元/人，建议乘车上山再步行下来。新措徒步往返约2小时，难度低。</div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">03</span>
+          <span class="label">9月28日</span>
+        </div>
+        <div class="day-content">
+          <h4>林芝 → 拉萨 <span class="altitude">海拔 2900 → 3650m</span></h4>
+          <span class="route-tag">拉林高速</span>
+          <span class="route-tag">尼洋河风光</span>
+          <span class="route-tag">米拉山口 5013m</span>
+          <p>沿拉林高速前往拉萨，全程约5.5小时。沿途经过尼洋河谷、米拉山口（5013m），风光壮美。下午抵达拉萨，入住供氧酒店。傍晚漫步八廓街，感受拉萨的烟火气。</p>
+          <div class="tip-box">💡 米拉山口风大且冷，停留拍照10-15分钟即可，注意保暖。到达拉萨后放慢节奏。</div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">04</span>
+          <span class="label">9月29日</span>
+        </div>
+        <div class="day-content">
+          <h4>拉萨 · 人文深度日 <span class="altitude">海拔 3650m</span></h4>
+          <span class="route-tag">布达拉宫</span>
+          <span class="route-tag">大昭寺</span>
+          <span class="route-tag">八廓街</span>
+          <p>上午参观布达拉宫（门票旺季200元），需提前1天在官方小程序预约，限时1小时参观。下午游览大昭寺（门票85元），感受藏传佛教的核心圣地。随后转八廓街，跟着信众顺时针转经，喝一碗光明港琼甜茶馆的甜茶。</p>
+          <div class="tip-box">💡 布达拉宫门票必须提前预约，旺季建议提前3-5天。殿内禁止拍照。大昭寺早上7-8点去人最少，可看到僧人早课。</div>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">05</span>
+          <span class="label">9月30日</span>
+        </div>
+        <div class="day-content">
+          <h4>拉萨 → 羊卓雍措 → 日喀则 <span class="altitude">海拔 3650 → 4441 → 3800m</span></h4>
+          <span class="route-tag">羊卓雍措</span>
+          <span class="route-tag">卡若拉冰川</span>
+          <span class="route-tag">日喀则</span>
+          <p>翻越岗巴拉山口（4990m）俯瞰羊卓雍措（门票60元），湖水呈梦幻蓝绿色，是西藏三大圣湖之一。继续前往卡若拉冰川（免费），近距离观赏巨型冰川。傍晚抵达日喀则，入住酒店。</p>
+          <div class="tip-box">💡 羊湖第一个观景台收费且人多，往前开2公里国道旁有免费观景点，视野同样绝佳。山口风大务必穿防风外套。</div>
+        </div>
+      </div>
+
+      <!-- Day 6 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">06</span>
+          <span class="label">10月1日</span>
+        </div>
+        <div class="day-content">
+          <h4>日喀则 → 纳木错 <span class="altitude">海拔 3800 → 4718m</span></h4>
+          <span class="route-tag">扎什伦布寺</span>
+          <span class="route-tag">纳木错</span>
+          <span class="route-tag">圣象天门</span>
+          <p>上午游览扎什伦布寺（门票80元），这是班禅驻锡地，拥有世界最大的强巴佛铜像。下午驱车前往纳木错（门票120元+观光车100元），世界海拔最高的大型咸水湖，湖水湛蓝，与念青唐古拉山相映成趣。入住纳木错附近。</p>
+          <div class="tip-box">💡 纳木错海拔4718m，是全程最高点。动作要慢，如有头痛及时吸氧。日落和星空极其震撼。</div>
+        </div>
+      </div>
+
+      <!-- Day 7 -->
+      <div class="day-block">
+        <div class="day-num">
+          <span class="num">07</span>
+          <span class="label">10月2日</span>
+        </div>
+        <div class="day-content">
+          <h4>纳木错 → 拉萨 ✈ 深圳 <span class="altitude">海拔 4718 → 3650m</span></h4>
+          <span class="route-tag">纳木错日出</span>
+          <span class="route-tag">那根拉山口 5190m</span>
+          <span class="route-tag">返程</span>
+          <p>清晨在纳木错看日出（约7:30），金色阳光洒在湖面上，与雪山倒影交相辉映。随后翻越那根拉山口返回拉萨，途中可经羊八井泡温泉（自选）。下午/傍晚从拉萨贡嘎机场飞回深圳。</p>
+          <div class="tip-box">💡 建议订下午或晚上的航班，预留充足时间。高原安检较多，提前2小时到机场。</div>
+        </div>
+      </div>
+    </div>
+    <div class="source-box">
+      行程数据来源：
+      <a href="https://www.theninetrip.com/best-tibet-7-day-itinerary-linzhi-lhasa-avoid-mistakes/" target="_blank" rel="noopener noreferrer">趣旅行·7日最优路线</a> ·
+      <a href="https://www.tibetway.com/tibet-travel-guide/travel-time.html" target="_blank" rel="noopener noreferrer">Tibet Vista·5条热门路线</a> ·
+      <a href="https://www.gtylx.com/news/n/386328" target="_blank" rel="noopener noreferrer">跟团游旅行网·2026攻略</a> ·
+      <a href="https://www.trip.com/moments/detail/lhasa-36-148773801" target="_blank" rel="noopener noreferrer">携程·西藏不踩坑指南</a>
+    </div>
+
+    <!-- 景点实拍图库 -->
+    <div style="margin-top:var(--spacing-xxl);">
+      <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:var(--spacing-lg);">📸 景点实拍预览</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--spacing-md);">
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/UZ8aWEA6efc/" alt="布达拉宫" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">布达拉宫 · 拉萨地标，世界文化遗产</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/ruRNs8yVqDw/" alt="八廓街" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">八廓街 · 大昭寺周边转经道，拉萨最繁华的街区</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/44s7z3MH9Cg/" alt="巴松措" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">巴松措 · 林芝最美湖泊，碧绿湖水倒映雪山</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/HePNyYe885E/" alt="雅鲁藏布大峡谷·南迦巴瓦峰" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">南迦巴瓦峰 · 中国最美雪山，峡谷深处云雾缭绕</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/gxP3LsXCtSY/" alt="羊卓雍措" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">羊卓雍措 · 西藏三大圣湖之一，梦幻蓝绿色</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/fNSerWOfYlY/" alt="扎什伦布寺" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">扎什伦布寺 · 班禅驻锡地，金顶辉煌庄严</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/cXgplne5iGE/" alt="纳木错" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">纳木错 · 世界海拔最高大型咸水湖，星空极美</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="https://s.coze.cn/image/h89ISvJ7PYk/" alt="鲁朗林海" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);" loading="lazy">
+          <figcaption style="font-size:0.82rem;color:var(--color-muted);margin-top:6px;text-align:center;">鲁朗林海 · 林芝秘境，牧场村落宛如童话世界</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 交通详解 ===== -->
+  <section class="section" id="transport">
+    <div class="section-label">TRANSPORTATION</div>
+    <h2 class="section-title">深圳 ⇌ 拉萨交通详解</h2>
+
+    <!-- 机票推荐 -->
+    <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:var(--spacing-md);">✈️ 深圳 → 拉萨 / 林芝 航班推荐</h3>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>方案</th>
+            <th>航线</th>
+            <th>参考价（含税）</th>
+            <th>耗时</th>
+            <th>适合人群</th>
+            <th>预订</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>直飞拉萨</strong></td>
+            <td>深圳宝安 → 拉萨贡嘎<br><span style="font-size:0.78rem;color:var(--color-muted);">藏航TV9918 / 川航3U8727 / 厦航MF</span></td>
+            <td style="color:var(--color-accent);font-weight:600;">2000-3500元</td>
+            <td>4.5-5.5h</td>
+            <td>预算足、怕折腾</td>
+            <td><a href="https://m.ctrip.com/html5/flight/SZX-LXA-day-1.html" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">携程查价</a></td>
+          </tr>
+          <tr>
+            <td><strong>经停同机</strong></td>
+            <td>深圳宝安 → 经停成都 → 拉萨贡嘎<br><span style="font-size:0.78rem;color:var(--color-muted);">藏航TV9878等，不换飞机</span></td>
+            <td style="color:var(--color-accent);font-weight:600;">2000-3800元</td>
+            <td>约6h</td>
+            <td>带老人小孩、首次进藏</td>
+            <td><a href="https://m.ctrip.com/html5/flight/SZX-LXA-day-1.html" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">携程查价</a></td>
+          </tr>
+          <tr>
+            <td><strong>中转拉萨</strong><br><span class="plan-badge badge-economy" style="font-size:0.68rem;">省钱</span></td>
+            <td>深圳 → 成都/重庆/贵阳 → 拉萨<br><span style="font-size:0.78rem;color:var(--color-muted);">最低1000元含税！中转4-8h</span></td>
+            <td style="color:var(--color-green);font-weight:700;">1000-1800元</td>
+            <td>7-16h</td>
+            <td>时间灵活、追求省钱</td>
+            <td><a href="https://m.ctrip.com/html5/flight/SZX-LXA-day-1.html" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-green);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">携程查低价</a></td>
+          </tr>
+          <tr>
+            <td><strong>直飞林芝</strong><br><span style="font-size:0.78rem;color:var(--color-muted);">推荐！低海拔进藏</span></td>
+            <td>深圳宝安 → 林芝米林<br><span style="font-size:0.78rem;color:var(--color-muted);">南航CZ3343 周二/六直飞 约3h45m</span></td>
+            <td style="color:var(--color-accent);font-weight:600;">2600-3400元</td>
+            <td>3h45m</td>
+            <td>推荐首选·先低后高</td>
+            <td><a href="https://www.tianxun.com/routes/szx/lzy/shenzhen-bao-an-international-to-lin-zhi.html" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-accent);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">天巡比价</a></td>
+          </tr>
+          <tr>
+            <td><strong>中转折林芝</strong></td>
+            <td>深圳 → 成都/西安 → 林芝米林<br><span style="font-size:0.78rem;color:var(--color-muted);">川航/海航等，经成都双流中转</span></td>
+            <td style="color:var(--color-green);font-weight:700;">1800-2400元</td>
+            <td>9-17h</td>
+            <td>预算有限但想林芝进</td>
+            <td><a href="http://m.ctrip.com/html5/flight/SZX.LZY.html" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">携程查价</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin:var(--spacing-sm) 0 var(--spacing-lg);padding:var(--spacing-sm) var(--spacing-md);background:#fef9f0;border-left:3px solid var(--color-gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:0.85rem;">
+      💡 <strong>购票建议</strong>：9月底属旺季尾巴，建议提前15-30天订票。周二/周三出发通常便宜200-500元。中转优先选成都/重庆转，中转时长控制在4-8小时内。多平台比价：
+      <a href="https://m.ctrip.com/html5/flight/SZX-LXA-day-1.html" target="_blank" rel="noopener noreferrer">携程</a> ·
+      <a href="https://www.tianxun.com/routes/szx/lzy/shenzhen-bao-an-international-to-lin-zhi.html" target="_blank" rel="noopener noreferrer">天巡Skyscanner</a> ·
+      <a href="https://www.sina.cn/news/article/comos_nimzqcv4106470.html" target="_blank" rel="noopener noreferrer">新浪机票比价攻略</a>
+    </div>
+
+    <!-- 火车推荐 -->
+    <h3 style="font-size:1.15rem;font-weight:700;margin:var(--spacing-xl) 0 var(--spacing-md);">🚂 火车进藏（青藏铁路）</h3>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>方案</th>
+            <th>车次/路线</th>
+            <th>票价</th>
+            <th>耗时</th>
+            <th>亮点</th>
+            <th>预订</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>广州→拉萨</strong><br><span style="font-size:0.78rem;color:var(--color-muted);">深圳先高铁到广州</span></td>
+            <td>Z264/Z265<br><span style="font-size:0.78rem;color:var(--color-muted);">广州白云 → 拉萨<br>经停西宁、格尔木、那曲</span></td>
+            <td>硬座447元<br>硬卧865元<br>软卧1468元</td>
+            <td>约53h</td>
+            <td>穿越可可西里、唐古拉山，风光壮美</td>
+            <td><a href="https://trains.ctrip.com/trainbooking/shenzhen-lasa" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">12306查票</a></td>
+          </tr>
+          <tr>
+            <td><strong>成都→拉萨</strong><br><span style="font-size:0.78rem;color:var(--color-muted);">深圳先飞成都</span></td>
+            <td>Z322<br><span style="font-size:0.78rem;color:var(--color-muted);">成都西 → 拉萨<br>经停广元、兰州、西宁</span></td>
+            <td>硬卧~650元<br>软卧~1200元</td>
+            <td>约36h</td>
+            <td>海拔循序渐进，高反最低</td>
+            <td><a href="https://trains.ctrip.com/trainbooking/chengdu-lasa" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">12306查票</a></td>
+          </tr>
+          <tr>
+            <td><strong>西宁→拉萨</strong><br><span style="font-size:0.78rem;color:var(--color-muted);">深圳飞西宁再转</span></td>
+            <td>Z223<br><span style="font-size:0.78rem;color:var(--color-muted);">西宁 → 拉萨<br>青藏铁路精华段</span></td>
+            <td>硬座224元<br>硬卧495元<br>软卧781元</td>
+            <td>约20h</td>
+            <td>青藏铁路精华段，翻越唐古拉山口</td>
+            <td><a href="https://trains.ctrip.com/trainbooking/xining-lasa" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:4px 12px;background:var(--color-blue);color:#fff;border-radius:var(--radius-sm);font-size:0.78rem;white-space:nowrap;">12306查票</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin:var(--spacing-sm) 0;padding:var(--spacing-sm) var(--spacing-md);background:#f0f7ff;border-left:3px solid var(--color-blue);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:0.85rem;">
+      🚂 <strong>火车Tips</strong>：深圳无直达拉萨火车，需先到中转城市。推荐"深圳飞成都+成都Z322进藏"组合，火车票提前15天开售，旺季一票难求，务必准时抢票。硬卧性价比最高，建议选中铺。
+    </div>
+
+    <!-- 当地交通 -->
+    <h3 style="font-size:1.15rem;font-weight:700;margin:var(--spacing-xl) 0 var(--spacing-md);">🚗 当地包车 / 租车</h3>
+    <div class="info-grid">
+      <div class="info-block">
+        <h4>包车（含司机）</h4>
+        <ul>
+          <li>4人包车（含司机）：1000-1500元/天</li>
+          <li>7座商务车：旺季1200-1500元/天</li>
+          <li>5座越野车：旺季1000-1200元/天</li>
+          <li>含油费、过路费、停车费、司机工资</li>
+          <li>不含：住宿、餐饮、门票</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>自驾租车（成都出发）</h4>
+        <ul>
+          <li>丰田普拉多：800-1200元/天</li>
+          <li>异地还车费：2000-4000元</li>
+          <li>油费：约0.8-1元/km（318国道）</li>
+          <li>需驾驶经验丰富，高原路况复杂</li>
+          <li><a href="http://m.czxlvyou.com/bcgl/index_3.html" target="_blank" rel="noopener noreferrer">川藏线自驾攻略 →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="source-box">
+      交通数据来源：
+      <a href="https://www.sina.cn/news/article/comos_nimzqcv4106470.html" target="_blank" rel="noopener noreferrer">新浪·深圳到拉萨机票比价</a> ·
+      <a href="https://m.ctrip.com/html5/flight/SZX-LXA-day-1.html" target="_blank" rel="noopener noreferrer">携程·深圳飞拉萨</a> ·
+      <a href="https://www.tianxun.com/routes/szx/lzy/shenzhen-bao-an-international-to-lin-zhi.html" target="_blank" rel="noopener noreferrer">天巡·深圳飞林芝</a> ·
+      <a href="https://trains.ctrip.com/trainbooking/shenzhen-lasa" target="_blank" rel="noopener noreferrer">携程·火车票查询</a> ·
+      <a href="https://www.huarenyizhan.com/thread-27271-1-1.html" target="_blank" rel="noopener noreferrer">西藏包车价格表</a> ·
+      <a href="https://www.flightconnections.com/cn/%E4%BB%8E-szx-%E9%A3%9E%E5%BE%80-lzy-%E7%9A%84%E8%88%AA%E7%8F%AD" target="_blank" rel="noopener noreferrer">FlightConnections·深圳林芝航线</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 预算明细 ===== -->
+  <section class="section" id="budget">
+    <div class="section-label">BUDGET BREAKDOWN</div>
+    <h2 class="section-title">4人7日预算明细（舒适型方案A/B）</h2>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>费用项目</th>
+            <th>明细说明</th>
+            <th>4人合计</th>
+            <th>人均</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>往返机票</strong></td>
+            <td>深圳⇌拉萨，直飞约2500元/人×2</td>
+            <td>~20,000元</td>
+            <td>~5,000元</td>
+          </tr>
+          <tr>
+            <td><strong>当地包车</strong></td>
+            <td>7座商务车 1200元/天 × 6天</td>
+            <td>~7,200元</td>
+            <td>~1,800元</td>
+          </tr>
+          <tr>
+            <td><strong>住宿</strong></td>
+            <td>舒适型酒店 350元/间/晚 × 2间 × 6晚</td>
+            <td>~4,200元</td>
+            <td>~1,050元</td>
+          </tr>
+          <tr>
+            <td><strong>门票</strong></td>
+            <td>布宫200+大昭寺85+巴松措120+羊湖60+纳木错220+扎什伦布80</td>
+            <td>~3,060元</td>
+            <td>~765元</td>
+          </tr>
+          <tr>
+            <td><strong>餐饮</strong></td>
+            <td>100-150元/人/天 × 7天</td>
+            <td>~3,500元</td>
+            <td>~875元</td>
+          </tr>
+          <tr>
+            <td><strong>其他</strong></td>
+            <td>氧气瓶、药品、保险、纪念品</td>
+            <td>~1,500元</td>
+            <td>~375元</td>
+          </tr>
+          <tr style="background:var(--color-tag-bg);font-weight:700;">
+            <td><strong>合计</strong></td>
+            <td></td>
+            <td>~39,460元</td>
+            <td>~9,865元</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:var(--color-muted);margin-top:var(--spacing-sm);">
+      * 以上为舒适型预算参考。选择经济型（中转机票+青旅/拼团）可降至人均4000-5500元；选择高端型（供氧酒店+越野车+私人导游）可达人均10000-15000元。
+    </p>
+    <div class="source-box">
+      预算数据来源：
+      <a href="https://www.theninetrip.com/tibet-4-person-travel-cost-2026-guide/" target="_blank" rel="noopener noreferrer">趣旅行·4人费用清单2026</a> ·
+      <a href="https://m.cncn.com/lxs/88694/n1267610" target="_blank" rel="noopener noreferrer">欣欣旅游·7日花费复盘</a> ·
+      <a href="https://www.tibetway.com/tibet-travel-guide/tourist-spending.html" target="_blank" rel="noopener noreferrer">Tibet Vista·费用明细</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 景点门票 ===== -->
+  <section class="section" id="spots">
+    <div class="section-label">ATTRACTIONS</div>
+    <h2 class="section-title">核心景点与门票</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>景点</th>
+            <th>门票</th>
+            <th>建议时长</th>
+            <th>亮点</th>
+            <th>注意事项</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>布达拉宫</strong></td>
+            <td>旺季200元</td>
+            <td>3-4小时</td>
+            <td>世界文化遗产，西藏标志</td>
+            <td>需提前预约，限时1小时，殿内禁拍</td>
+          </tr>
+          <tr>
+            <td><strong>大昭寺</strong></td>
+            <td>85元</td>
+            <td>1-2小时</td>
+            <td>藏传佛教核心圣地</td>
+            <td>早上7-8点去人最少，可看僧人早课</td>
+          </tr>
+          <tr>
+            <td><strong>巴松措</strong></td>
+            <td>120元+观光车35元</td>
+            <td>2-3小时</td>
+            <td>林芝最美湖泊，湖心岛古寺</td>
+            <td>可结合新措轻徒步</td>
+          </tr>
+          <tr>
+            <td><strong>羊卓雍措</strong></td>
+            <td>60元</td>
+            <td>1-2小时</td>
+            <td>西藏三大圣湖之一，梦幻蓝绿</td>
+            <td>第一个观景台收费，前方2km有免费点</td>
+          </tr>
+          <tr>
+            <td><strong>纳木错</strong></td>
+            <td>120元+观光车100元</td>
+            <td>3-4小时</td>
+            <td>世界最高大型咸水湖</td>
+            <td>海拔4718m，注意高反</td>
+          </tr>
+          <tr>
+            <td><strong>扎什伦布寺</strong></td>
+            <td>80元</td>
+            <td>1-2小时</td>
+            <td>班禅驻锡地，世界最大强巴佛</td>
+            <td>日喀则核心景点</td>
+          </tr>
+          <tr>
+            <td><strong>卡若拉冰川</strong></td>
+            <td>免费</td>
+            <td>30分钟</td>
+            <td>公路旁可近距离观赏的冰川</td>
+            <td>《红河谷》取景地</td>
+          </tr>
+          <tr>
+            <td><strong>色拉寺</strong></td>
+            <td>50元</td>
+            <td>2小时</td>
+            <td>僧人辩经（15:00-17:00）</td>
+            <td>时间允许建议安排</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-box">
+      门票数据来源：
+      <a href="https://www.gtylx.com/news/n/386328" target="_blank" rel="noopener noreferrer">跟团游旅行网·2026景点门票</a> ·
+      <a href="https://www.trip.com/moments/detail/lhasa-36-148773801" target="_blank" rel="noopener noreferrer">携程·西藏攻略</a> ·
+      <a href="https://www.tibetway.com/tibet-travel-guide/travel-time.html" target="_blank" rel="noopener noreferrer">Tibet Vista·景点信息</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 美食 ===== -->
+  <section class="section" id="food">
+    <div class="section-label">LOCAL FOOD</div>
+    <h2 class="section-title">拉萨必吃美食</h2>
+    <p style="color:var(--color-muted);margin-bottom:var(--spacing-lg);font-size:0.92rem;">
+      拉萨的餐饮价格和内地普通城市差不多，以下推荐均为本地人常去的老店，性价比高。
+    </p>
+
+    <div class="food-list">
+      <div class="food-item">
+        <div class="food-emoji">🍵</div>
+        <div class="food-info">
+          <h5>光明港琼甜茶馆</h5>
+          <p>拉萨最有烟火气的老店。甜茶1元/杯自己倒，藏面7元/碗。人声鼎沸，感受最真实的拉萨日常。</p>
+          <div class="food-price">人均15元 · 丹杰林路店</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🍖</div>
+        <div class="food-info">
+          <h5>玛吉阿米</h5>
+          <p>八廓街东南角，仓央嘉措爱情传说之地。藏式烤羊排外焦里嫩，尼泊尔咖喱饭配手工馕饼。</p>
+          <div class="food-price">人均85元 · 八廓街</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🥩</div>
+        <div class="food-info">
+          <h5>央卿仓藏餐厅</h5>
+          <p>拉萨老牌藏餐，非遗传统手艺。手抓藏香猪、藏式酸奶饭，遵循古法制作，还原藏餐本味。</p>
+          <div class="food-price">人均70元 · 城关区</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🥘</div>
+        <div class="food-info">
+          <h5>牦牛肉火锅</h5>
+          <p>牦牛骨原汤锅底，配藏式野生菌、藏豆腐。肉质紧实不膻，高蛋白低脂肪，暖身抗高反。</p>
+          <div class="food-price">人均80-100元 · 北京中路</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🥣</div>
+        <div class="food-info">
+          <h5>古树酸奶</h5>
+          <p>八廓街鲁固小巷的宝藏小店。手工藏式酸奶，浓稠醇厚，有纳木那酸奶、桂花酸奶等创新口味。</p>
+          <div class="food-price">人均20元 · 八廓街鲁固小巷</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🍜</div>
+        <div class="food-info">
+          <h5>措姆凉粉</h5>
+          <p>本地年轻人排队的宝藏小店。凉粉5元/碗酸辣开胃，炸土豆5元外脆里糯。下午人最多，建议错峰。</p>
+          <div class="food-price">人均8元 · 生态园路</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🐔</div>
+        <div class="food-info">
+          <h5>鲁朗石锅鸡</h5>
+          <p>林芝特色名菜。用当地土鸡、手掌参、藏药材在石锅中慢炖，汤鲜味美，滋补养生。</p>
+          <div class="food-price">人均60-80元 · 鲁朗小镇</div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="food-emoji">🌶️</div>
+        <div class="food-info">
+          <h5>胡四川菜（布宫店）</h5>
+          <p>布达拉宫旁的院子川菜。明档厨房现点现炒，无预制菜。招牌鲜锅兔96元、回锅肉36元。</p>
+          <div class="food-price">人均70元 · 天海路</div>
+        </div>
+      </div>
+    </div>
+    <div class="source-box">
+      美食数据来源：
+      <a href="https://m.sohu.com/a/1022826364_122745326/" target="_blank" rel="noopener noreferrer">搜狐·拉萨必吃8家馆子</a> ·
+      <a href="https://cj.sina.cn/article/norm_detail?froms=ttmp&url=https://finance.sina.com.cn/jjxw/2026-07-20/doc-iniimzha9720384.shtml" target="_blank" rel="noopener noreferrer">新浪·拉萨川菜打卡</a> ·
+      <a href="https://www.trip.com/moments/detail/lhasa-36-148773801" target="_blank" rel="noopener noreferrer">携程·西藏美食推荐</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 天气 ===== -->
+  <section class="section" id="weather">
+    <div class="section-label">WEATHER & CLOTHING</div>
+    <h2 class="section-title">9月底西藏天气与穿衣指南</h2>
+    <p style="color:var(--color-muted);margin-bottom:var(--spacing-lg);font-size:0.92rem;">
+      9月底是西藏旅游公认的黄金期。秋高气爽、晴天率高、雪山能见度极佳。昼夜温差15-20℃，白天阳光下体感温暖，日落后气温骤降。
+    </p>
+
+    <div class="weather-grid">
+      <div class="weather-card">
+        <div class="city">拉萨</div>
+        <div class="temp">8~20°C</div>
+        <div class="desc">凉爽干燥，阳光充足<br>昼夜温差大</div>
+      </div>
+      <div class="weather-card">
+        <div class="city">林芝</div>
+        <div class="temp">10~20°C</div>
+        <div class="desc">海拔较低，气候温和<br>植被丰富</div>
+      </div>
+      <div class="weather-card">
+        <div class="city">日喀则</div>
+        <div class="temp">2~23°C</div>
+        <div class="desc">气温略低于拉萨<br>风力稍大</div>
+      </div>
+      <div class="weather-card">
+        <div class="city">纳木错</div>
+        <div class="temp">1~19°C</div>
+        <div class="desc">夜间可能降至零下<br>需厚保暖衣物</div>
+      </div>
+      <div class="weather-card">
+        <div class="city">珠峰大本营</div>
+        <div class="temp">0~20°C</div>
+        <div class="desc">夜间严寒，需羽绒服<br>星空极美</div>
+      </div>
+    </div>
+
+    <div style="margin-top:var(--spacing-xl);">
+      <h4 style="font-size:1rem;font-weight:700;margin-bottom:var(--spacing-md);">🧥 穿衣策略：洋葱式三层穿搭</h4>
+      <div class="info-grid">
+        <div class="info-block">
+          <h4>内层（贴身）</h4>
+          <ul>
+            <li>速干长袖T恤或薄款保暖内衣</li>
+            <li>❌ 不要穿纯棉——出汗后不易干，易失温</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>中层（保暖）</h4>
+          <ul>
+            <li>抓绒衣或薄款毛衣</li>
+            <li>去纳木错/珠峰需加轻薄羽绒服</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>外层（防风）</h4>
+          <ul>
+            <li>防风防水冲锋衣（必备）</li>
+            <li>阻隔寒风，应对偶发阵雨</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>配饰</h4>
+          <ul>
+            <li>UV400墨镜（全程佩戴）</li>
+            <li>宽檐遮阳帽 / 保暖毛线帽</li>
+            <li>薄手套、润唇膏、SPF50+防晒霜</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="source-box">
+      天气数据来源：
+      <a href="https://www.sina.cn/news/article/comos_nimwckz1085875.html" target="_blank" rel="noopener noreferrer">新浪·拉萨9-10月黄金期</a> ·
+      <a href="https://www.xizanglvyou.org/26565.html" target="_blank" rel="noopener noreferrer">域龙旅行社·西藏9月天气</a> ·
+      <a href="https://www.tibetway.com/zh-tw/tibet-travel-guide/what-to-wear.html" target="_blank" rel="noopener noreferrer">Tibet Vista·穿衣指南</a> ·
+      <a href="https://m.sohu.com/a/1055656431_122912464/" target="_blank" rel="noopener noreferrer">搜狐·2026出行准备指南</a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: 行前准备 ===== -->
+  <section class="section" id="prepare">
+    <div class="section-label">PREPARATION</div>
+    <h2 class="section-title">行前准备清单</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--spacing-xl);">
+      <div>
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:var(--spacing-md);">📋 证件</h4>
+        <ul class="checklist">
+          <li>身份证（全程必带，检查站极多）</li>
+          <li>边防证（去珠峰/阿里必须）</li>
+          <li>学生证/军官证（部分景区半价）</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--color-muted);margin-top:var(--spacing-sm);">
+          💡 边防证可在户籍地免费办理，也可通过"移民局12367"APP在线申请电子边防证（2026年4月起支持）。仅在拉萨/林芝市区游玩无需办理。
+        </p>
+      </div>
+      <div>
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:var(--spacing-md);">💊 高反预防</h4>
+        <ul class="checklist">
+          <li>进藏前1周停止剧烈运动</li>
+          <li>红景天（提前1周服用，效果因人而异）</li>
+          <li>葡萄糖口服液</li>
+          <li>布洛芬（缓解高反头痛）</li>
+          <li>氧气瓶（拉萨药店买20-30元/瓶，景区卖100+）</li>
+          <li>高原安</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:var(--spacing-md);">👕 衣物装备</h4>
+        <ul class="checklist">
+          <li>防风冲锋衣（必备）</li>
+          <li>轻薄羽绒服（纳木错/珠峰用）</li>
+          <li>抓绒衣/薄毛衣</li>
+          <li>速干内衣2套</li>
+          <li>防风长裤+薄秋裤</li>
+          <li>防滑徒步鞋</li>
+          <li>UV400墨镜</li>
+          <li>SPF50+防晒霜</li>
+          <li>润唇膏+高保湿面霜</li>
+          <li>保温杯（多喝热水缓解高反）</li>
+          <li>遮阳帽+毛线帽</li>
+          <li>薄手套</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:var(--spacing-md);">⚠️ 重要提醒</h4>
+        <ul class="checklist">
+          <li>到达当天不洗澡、不洗头、不饮酒</li>
+          <li>每天饮水2-3L</li>
+          <li>布达拉宫门票提前3-5天预约</li>
+          <li>寺庙内禁止拍照</li>
+          <li>转经/八廓街顺时针走</li>
+          <li>不要触摸藏族同胞头部</li>
+          <li>不要踩踏门槛</li>
+          <li>不要随意拍摄当地人</li>
+          <li>路边牦牛/羊合影要收费</li>
+          <li>购买高原旅行保险</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <p>本攻略数据综合自携程、Trip.com、小红书、新浪旅游、欣欣旅游、趣旅行、Tibet Vista、川藏线自驾旅游网等平台公开信息</p>
+  <p>价格为2026年参考数据，实际以预订时为准 · 建议出发前确认最新政策和路况</p>
+  <p style="margin-top:var(--spacing-md);">祝旅途愉快，扎西德勒！🙏</p>
+</footer>
+
+</body>
+</html>
